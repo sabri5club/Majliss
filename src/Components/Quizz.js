@@ -10,6 +10,7 @@ import QuizzNext from "./Quizz_Components/QuizzNext";
 import QuizzHeart from "./Quizz_Components/QuizzHeart";
 import QuizzReport from "./Quizz_Components/QuizzReport";
 import QuizzModal from "./Quizz_Components/QuizzModal";
+import { FaTwitterSquare } from "react-icons/fa";
 
 //.filter(
 // (item) => item.question_detail.categorie === props.categorie
@@ -27,6 +28,7 @@ export default class Quizz extends Component {
       HeartBroke: [],
       percentage: 0,
       heart: [0, 1, 2, 3, 4],
+      restart: false,
       message: ["Bonne réponse", "Mauvaise réponse"],
       show: false,
     };
@@ -35,10 +37,19 @@ export default class Quizz extends Component {
   }
 
   percentageUpdate() {
-    if (this.state.index < this.state.data.length - 1) {
+    if (
+      this.state.index < this.state.data.length - 1 &&
+      this.state.restart === false
+    ) {
       this.setState({
         index: this.state.index + 1,
         percentage: this.state.percentage * 0,
+        restart: false,
+      });
+    } else if (this.state.restart) {
+      this.setState({
+        percentage: this.state.percentage * 0,
+        restart: true,
       });
     } else {
       this.setState({
@@ -101,6 +112,7 @@ export default class Quizz extends Component {
       this.setState({
         index: this.state.index + 1,
         percentage: this.state.percentage * 0,
+        restart: true,
       });
     } else if (this.state.index === this.state.data.length - 1) {
       this.setState({
@@ -155,6 +167,7 @@ export default class Quizz extends Component {
                   index={this.state.index}
                   percentage={this.state.percentage}
                   percentageUpdate={this.percentageUpdate}
+                  restart={this.state.restart}
                 />
               </div>
               <div className="col-sm-12 col-md-4 d-flex justify-content-center">

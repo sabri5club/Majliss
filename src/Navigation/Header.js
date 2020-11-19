@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  // const [isOpen, setIsOpen] = useState(!isOpen);
-  // const toggle = () => setIsOpen(!isOpen);
+  // const [show, setShow] = useState("");
+  // const toggle = () =>setShow("collapsed");
   return (
     <div className="row">
       <div className="col-md-12 text-center">
@@ -24,6 +24,9 @@ export default function Header() {
               </Link>
               <Link className="mef-navlink" to="/regle_du_jeu">
                 Règlement
+              </Link>
+              <Link className="mef-navlink" to="/generalRank">
+                Classement
               </Link>
             </Nav>
 

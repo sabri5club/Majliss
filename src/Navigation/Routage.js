@@ -8,6 +8,7 @@ import Categorie from "../Components/Layout/Categorie";
 import Quizz from "../Components/Quizz";
 import Submit from "../Components/Submit_quizz/Submit";
 import Apprentissage from "../Components/Apprentissage";
+import generalRank from "../Components/Ranking/generalRank";
 import { Router, Route } from "react-router-dom";
 import history from "./History";
 import QuizzConfig from "../Components/Quizz_Components/QuizzConfig";
@@ -27,6 +28,7 @@ export default function Routage() {
         <Route path="/QuizzConfig" component={QuizzConfig}></Route>
         <Route path="/Quizz" component={Quizz}></Route>
         <Route path="/Submit" component={Submit}></Route>
+        <Route path="/generalRank" component={generalRank}></Route>
 
         <Route path="/regle_du_jeu" component={Reglement}></Route>
         {/* <Footer></Footer> */}
