@@ -1,44 +1,35 @@
 .mef-title-quizz {
-  color: rgb(255, 255, 255);
-  background-color: rgb(49, 98, 61);
-  border-radius: 30px;
+  color: rgb(99, 99, 115);
+  border-radius: 25px;
   font-family: "Roboto";
   max-width: 600px;
-  margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
-  padding: 15px;
+  padding: 8px;
 }
 
 .mef-quest {
-  /* background-color:#4b774e; */
   color: rgb(255, 255, 255);
-  border-radius: 30px;
-  margin-bottom: 15px;
-  margin-top: 25px;
   font-family: "Roboto";
-  font-size: large;
-  font-weight: 500;
-  display: flex;
+  font-weight: 400;
   align-items: center;
   justify-content: center;
+  align-content: center;
 }
 
 .mef-rep-quizz {
   color: rgb(255, 255, 255);
   border-radius: 20px;
-  background-color: rgb(75, 119, 78);
+  background-color: rgb(236, 236, 244);
   max-width: 500px;
-  margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
+  padding: 25px;
 }
 
 .mef-rep-quizz:hover {
   cursor: pointer;
-  background-color: rgb(109, 195, 113);
+  background-color: rgb(125, 163, 127);
 }
 
 .mef-cat-title {
@@ -70,33 +61,32 @@
 }
 
 .mef-next {
-  max-width: 250px;
+  padding: 8px;
   margin-top: 20px;
   font-family: "Roboto";
-  font-weight: 500;
-  font-size: large;
+  font-weight: 400;
 }
 
 .mef-next:hover {
   cursor: pointer;
-  font-size: 20px;
+  background-color: rgb(99, 99, 115);
+  padding: 8px;
+  color: white;
+  border-radius: 20px;
 }
 
 .mef-report {
   max-width: 250px;
   margin-top: 20px;
   font-family: "Roboto";
-  font-weight: 500;
-  font-size: large;
 }
 
 .mef-report:hover {
   cursor: pointer;
-  font-size: 20px;
 }
 
 .progress-bar {
-  margin-top: 20px;
+  margin-top: 15px;
   position: relative;
   height: 15px;
   width: 300px;
@@ -106,7 +96,7 @@
 }
 
 .filler {
-  background: rgb(75, 119, 78);
+  background: #36ab9d;
   height: 100%;
   border-radius: inherit;
   transition: width 0.2s ease-in;
@@ -133,10 +123,11 @@ progress[value]::-webkit-progress-value {
 }
 
 .mef-card-categorie {
-  background-color: rgb(245, 243, 229);
+  background-color: rgb(247, 247, 247);
 }
 .mef-card-categories {
   background-color: rgb(140, 175, 240);
+  margin: 10px;
 }
 
 .svg {
@@ -159,20 +150,11 @@ progress[value]::-webkit-progress-value {
   font-weight: bold;
 }
 
-.mef-modal-card {
-  background-color: rgb(249, 251, 250);
-  opacity: 1;
-  margin: 0px;
-  padding: 0px;
-}
-
-.mef-modal-header {
-  background-color: rgb(32, 178, 122);
-  color: white;
-}
-
-.mef-modal-body {
-  background-color: rgb(155, 224, 198);
-  margin: 0px;
-  padding: 0 !important;
+.verset-arabe {
+  direction: rtl;
+  padding: 10;
+  text-align: right;
+  font-family: Maddina;
+  font-size: 2.2rem;
+  color: rgb(34, 34, 58);
 }

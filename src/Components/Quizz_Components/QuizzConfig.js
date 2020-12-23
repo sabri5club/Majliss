@@ -1,46 +1,81 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import Quizz from "../Quizz";
+import Quizz from "./Quizz";
 
 export default function QuizzConfig() {
   const [start, setStart] = useState(false);
-  const [value, setValue] = useState(3);
+  const [nbQuestion, setNbQuestion] = useState(4);
+  const [level, setLevel] = useState("0");
+  const [categorie, setCategorie] = useState([]);
+  const [checkbox, setCheckbox] = useState([false, false, false, false, false]);
+  const [name, setName] = useState("");
+
+  const AddCategorie = (theme, e) => {
+    if (categorie.includes(theme)) {
+      const index = categorie.indexOf(theme);
+      const copy = [...categorie];
+      copy.splice(index, 1);
+      setCategorie(copy);
+      setCheckbox(true);
+    } else {
+      setCategorie((categorie) => [...categorie, theme]);
+      setCheckbox(e.target.checked);
+    }
+  };
 
   return (
     <div>
-      {start ? (
+      {name.length > 3 && start === true ? (
         <div>
-          {" "}
           {/* <h3>Vous pouvez ici configurez votre quizz</h3> */}
-          <Quizz categorie={"Le coran"} />{" "}
+          <Quizz
+            nombre={nbQuestion}
+            level={level}
+            categorie={"Le coran"}
+            name={name}
+          />
         </div>
       ) : (
         <>
+          {categorie}
           <div className="container">
             <div style={{ height: 500 }} className="row ">
               <div className="col-12 col-md-12 d-flex justify-content-center align-items-center">
-                <h6 >
+                <h6>
                   Pour commencer le Quizz merci de configurer les options
                   suivantes : la difficulté, le nombre de question (En cour de
                   développement ...)
                 </h6>
               </div>
+
               <div className="col-12 col-md-12 d-flex justify-content-center align-items-center">
                 <Form>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Votre Pseudo :</Form.Label>
+                    <Form.Control
+                      onChange={(e) => setName(e.target.value)}
+                      type="text"
+                      placeholder="Entrer un pseudo"
+                      required
+                      value={name}
+                    />
+                  </Form.Group>
+                
+
                   <Form.Group controlId="formNasicRange">
                     <Form.Label>
                       Nombre de série (10 questions par série)
                     </Form.Label>
                     <Form.Control
-                      onChange={(e) => setValue(e.target.value)}
+                      onChange={(e) => setNbQuestion(e.target.value)}
                       type="range"
                       min="0"
-                      max="10"
-                      step="1"
-                      value={value}
+                      max="30"
+                      step="5"
+                      value={nbQuestion}
                       style={{ color: "purple" }}
                     />
-                    <p>Questions : {value * 10}</p>
+                    <p>Questions : {nbQuestion}</p>
                   </Form.Group>
 
                   <Form.Label
@@ -50,6 +85,7 @@ export default function QuizzConfig() {
                     Difficulté
                   </Form.Label>
                   <Form.Control
+                    onClick={(e) => setLevel(e.target.value)}
                     as="select"
                     className="my-1 mr-sm-2"
                     id="inlineFormCustomSelectPref"
@@ -59,35 +95,43 @@ export default function QuizzConfig() {
                     <option value="1">Moyen</option>
                     <option value="2">Intermédiaire</option>
                     <option value="3">Difficile</option>
-                    <option value="3">Expert</option>
+                    <option value="4">Expert</option>
                   </Form.Control>
                   <p>Choix catégorie :</p>
                   {["checkbox"].map((type) => (
                     <div key={`inline-${type}`} className="mb-3">
                       <Form.Check
+                        onClick={(e) => AddCategorie("Toutes", e)}
                         inline
                         label="Toutes"
                         type={type}
                         id={`inline-${type}-1`}
+                        checked={checkbox[0]}
                       />
                       <Form.Check
+                        onClick={(e) => AddCategorie("coran", e)}
                         inline
                         label="coran"
                         type={type}
                         id={`inline-${type}-2`}
+                        checked={checkbox[1]}
                       />
 
                       <Form.Check
+                        onClick={(e) => AddCategorie("ramadan", e)}
                         inline
                         label="ramadan"
                         type={type}
                         id={`inline-${type}-3`}
+                        checked={checkbox[2]}
                       />
                       <Form.Check
+                        onClick={(e) => AddCategorie("prières", e)}
                         inline
                         label="prière"
                         type={type}
                         id={`inline-${type}-4`}
+                        checked={checkbox[3]}
                       />
                     </div>
                   ))}
@@ -95,7 +139,7 @@ export default function QuizzConfig() {
               </div>
               <div className="col-12 col-md-12 d-flex justify-content-center align-items-start">
                 <button
-                  onClick={() => setStart(true)}
+                  onClick={() => setStart(name.length > 0 ? !start : false)}
                   className="btn btn-primary"
                 >
                   Lancer mon Quizz

@@ -1,0 +1,36 @@
+.btn-accueil {
+  background-color: #36ab9d;
+  color: rgb(255, 255, 255);
+  border-color: #36ab9d;
+  float: inline-start;
+  width: 166px;
+  height: 56px;
+  top: 300px;
+  border: 1px solid #36ab9d;
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+.majliss-title {
+  width: 30vw;
+  text-align: center;
+  height: 20vh;
+  margin-top: 15px;
+}
+
+.majliss-subtitle {
+  width: 100vw;
+  text-align: center;
+  height: 15vh;
+}
+
+.btn-home {
+  height: 20vh;
+}

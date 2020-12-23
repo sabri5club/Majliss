@@ -6,12 +6,12 @@ export default function QuizzScore(props) {
   return (
     <>
       <IconContext.Provider
-        value={{ color: "#DAA520", className: "mef-icon", size: 26 }}
+        value={{ color: "#DAA520", className: "mef-icon", size: 20 }}
       >
         <FaStar />
       </IconContext.Provider>
       <div className="mef-exp">
-        <h3>{props.score}</h3>
+        <h4>{props.score}</h4>
       </div>
     </>
   );

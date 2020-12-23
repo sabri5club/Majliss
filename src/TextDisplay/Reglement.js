@@ -3,7 +3,7 @@ import "./TextDisplay.css";
 
 export default function Reglement() {
   return (
-    <div>
+    <>
       <div className="container">
         <div className="row">
           <div className="col d-flex justify-content-center">
@@ -24,8 +24,8 @@ export default function Reglement() {
           <div className="col d-flex col-sm-12 justify-content-center">
             <div className="mef2-reglement">
               <p>
-                - Il y a quatre propositions de réponses par question, mais une
-                seule bonne réponse
+                - Il y a quatre propositions par question, mais une seule bonne
+                réponse
               </p>
             </div>
           </div>
@@ -49,13 +49,13 @@ export default function Reglement() {
             <div className="mef2-reglement">
               <p>
                 - Un score vous est attribué par Catégorie de question, une
-                bonne réponse vous donne 1 points, 1 mauvaise vous retir un
+                bonne réponse vous donne 1 points, 1 mauvaise vous retire un
                 coeur
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

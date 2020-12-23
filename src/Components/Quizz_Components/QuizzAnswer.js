@@ -1,17 +1,46 @@
-import React from "react";
-import "./QuizzAnswer.css";
-export default function QuizzAnswer(props) {
+import React, { useEffect, useMemo, useState } from "react";
+import { useSpring, animated } from "react-spring";
+function QuizzAnswer(props) {
+  const c2Style = {
+    borderRadius: 20,
+    marginTop: 35,
+    padding: 8,
+    cursor: "pointer",
+  };
+  const test = useSpring({
+    opacity: 1,
+    from: { opacity: 1, marginRight: 250, marginLeft: -250 },
+    marginLeft: 0,
+    marginRight: 0,
+
+    config: { duration: 1000 },
+  });
+
+  const [letter] = useState(["A", "B", "C", "D"]);
+  useEffect(() => {
+    console.log(props.index);
+  }, [props.index]);
+
   return (
-    <div className="col-sm-6 col-md-6 text-center">
-      <div
-        onMouseOver={() => console.log("test")}
-        onClick={props.onClick}
-        // style={{ backgroundColor: props.bgColor }}
-        //   onClick={this.boxClick1}
-        className="mef-rep-quizz box"
-      >
-        {props.proposition}
+    <div className="row justify-content-center">
+      <div className="col-6 justify-content-center w-50 text-center">
+        <animated.div style={test}>
+          {props.data.map((quizz, idx) => (
+            <div
+              key={idx}
+              style={{ ...c2Style, ...props.couleur[idx] }}
+              onClick={() => props.clic(quizz)}
+            >
+              <p>
+                <span style={{ fontWeight: "bold" }}>{letter[idx] + "."}</span>
+                {" " + quizz.proposition}
+              </p>
+            </div>
+          ))}
+        </animated.div>
       </div>
     </div>
   );
 }
+
+export default React.memo(QuizzAnswer);

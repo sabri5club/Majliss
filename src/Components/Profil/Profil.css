@@ -1,0 +1,32 @@
+.form-item {
+  margin: 10px;
+  padding: 10px;
+}
+
+.form-input {
+  max-width: 200px;
+}
+
+.label {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 50;
+}
+
+.container-profil {
+  background-color: rgb(255, 255, 255);
+}
+
+.p-sidebar {
+  background-color: rgb(255, 255, 255);
+}
+
+.p-row {
+  background-color: mediumseagreen;
+}
+
+.widget-box-p1 {
+  background-color: rgb(231, 240, 235);
+  border-radius: 20px;
+  margin: 15px;
+  max-width: 600px;
+}

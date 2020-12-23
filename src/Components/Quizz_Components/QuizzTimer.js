@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 
-function ProgressBar({ percentage, percentageUpdate, index, data, restart }) {
+function ProgressBar({
+  percentage,
+  percentageUpdate,
+  index,
+  data,
+  percentageIncrease,
+  Explanation,
+}) {
   const [count, setCount] = useState(percentage);
   const [color, SetColor] = useState("green");
 
   useEffect(() => {
     if (count < 50) {
-      SetColor("rgb(75, 119, 78)");
+      SetColor("rgb(199, 199, 232)");
     } else if (count === 50) {
       SetColor("rgb(224,146,0)");
     } else if (count > 79) {
@@ -16,19 +23,24 @@ function ProgressBar({ percentage, percentageUpdate, index, data, restart }) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (count < 100 && restart === false) {
-        setCount((prevCount) => prevCount + 1);
-      } else if (count === 100 && index <= data - 1) {
+      if (percentage < 100 && Explanation === false) {
+        setCount(percentage);
+        percentageIncrease();
+      } else if (percentage === 100 && index <= data - 1) {
         percentageUpdate();
-        setCount(0);
+        setCount(percentage);
         clearInterval(timer);
-      } else if (count < 100 && restart === true) {
-        percentageUpdate();
-        setCount(0);
       }
     }, 300);
     return () => clearInterval(timer);
-  }, [count, index, data, percentageUpdate]);
+  }, [
+    index,
+    data,
+    percentageUpdate,
+    percentage,
+    percentageIncrease,
+    Explanation,
+  ]);
 
   return (
     <div className="progress-bar">

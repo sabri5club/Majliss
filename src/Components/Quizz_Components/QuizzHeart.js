@@ -6,7 +6,7 @@ export default function QuizzHeart(props) {
   return (
     <>
       <IconContext.Provider
-        value={{ color: "#ef3969", className: "mef-icon", size: 24 }}
+        value={{ color: "#ef3969", className: "mef-icon", size: 20 }}
       >
         {props.heart.map((heart,index) => (
          <div key={index}>

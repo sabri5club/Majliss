@@ -26,9 +26,7 @@ export default function Submit() {
                   <select>
                     <option value="grapefruit">Prière</option>
                     <option value="lime">Coran</option>
-                    <option  value="coconut">
-                      Prophète
-                    </option>
+                    <option value="coconut">Prophète</option>
                     <option value="mango">Ramadan</option>
                   </select>
                 </div>
@@ -72,15 +70,19 @@ export default function Submit() {
                   />
                 </Form.Group>
                 <div className="mef-button-position">
-                  <Button className="btn-primary" type="submit">
+                  <Button
+                    onClick={(e) => e.prevent.default}
+                    className="btn-primary"
+                    type="submit"
+                  >
                     Valider
                   </Button>
                 </div>
-                <span>
-                  <h6>Pas encore inscris?</h6>
-                  <p>S'inscrire ici</p>
-                </span>
               </Form>
+              <span>
+                <h6>Pas encore inscris?</h6>
+                <p>S'inscrire ici</p>
+              </span>
             </div>
           </div>
         </div>
