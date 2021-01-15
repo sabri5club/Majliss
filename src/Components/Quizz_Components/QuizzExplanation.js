@@ -3,21 +3,22 @@ import { useSpring, animated } from "react-spring";
 
 function QuizzExplanation(props) {
   const anim = useSpring({
-    backgroundColor: "#22223A",
-    color: "white",
+    color: "black",
     opacity: 0.8,
     zIndex: "1",
     from: { opacity: 0 },
     config: { duration: 2000 },
-    marginTop: 30,
   });
   if (props.explanation.length > 0) {
     return (
-      <div className="row">
-        <div className="col-sm-6 col-md-12 d-flex justify-content-center ">
+      <div className="row justify-content-center">
+        <div className="col-6 d-flex justify-content-center ">
           <animated.div style={anim}>
             <div style={{ margin: 25 }}>
-              <p>{props.explanation}</p>
+              <p>
+                <span style={{ color: "#36ab9d" }}>Note ! </span>
+                {props.explanation}
+              </p>
             </div>
           </animated.div>
         </div>

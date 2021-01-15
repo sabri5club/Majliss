@@ -25,8 +25,24 @@
 }
 
 .widget-box-p1 {
-  background-color: rgb(231, 240, 235);
+  background-color: rgb(251, 251, 251);
+  border-style: thin;
+  border-width: 0.3px;
   border-radius: 20px;
   margin: 15px;
   max-width: 600px;
+}
+
+.mef-profil-item:hoover {
+  background: linear-gradient(90.27deg, #36ab9d 0%, #87e1cf 100.59%);
+}
+.list-group-mine .list-group-item {
+  background-color: rgb(251, 251, 251);
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+
+.list-group-mine .list-group-item:hover {
+  background: linear-gradient(90.27deg, #36ab9d 0%, #87e1cf 100.59%);
+  color: white;
 }

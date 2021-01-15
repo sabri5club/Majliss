@@ -11,18 +11,17 @@ export const Pagination = ({ versePerPage, totalVerse, paginate }) => {
   return (
     <nav>
       <ul className="pagination flex-wrap">
-        {pageNumbers.map((number) => (
-          <li
-            key={number}
-            className={`page-item  ${active}`}
-            aria-current="page"
-          >
-            <Link
-              onClick={() => paginate(number)}
-              className="page-link active"
-            />
-            {number}
-          </li>
+        {pageNumbers.map((number, idx) => (
+          <div key={number}>
+            <li className={`page-item  ${active}`} aria-current="page">
+              <Link
+                href="/"
+                onClick={() => paginate(number)}
+                className="page-link active"
+              />
+              {number}
+            </li>
+          </div>
         ))}
       </ul>
     </nav>

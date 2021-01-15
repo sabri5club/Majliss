@@ -115,4 +115,15 @@ export const Quotes = [
     },
     id: 3,
   },
+  {
+    Quotes_details: {
+      categorie: "Compagnons",
+      title: "Savants",
+      auteur: "Omar ibn al khattab",
+      description:
+        "Se poser les bonnes questions est la moitié de la richesse et se taire est la moitié de la sagesse.",
+      numéro: 1458,
+    },
+    id: 3,
+  },
 ];

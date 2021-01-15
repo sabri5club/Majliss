@@ -13,7 +13,7 @@ function ProgressBar({
 
   useEffect(() => {
     if (count < 50) {
-      SetColor("rgb(199, 199, 232)");
+      SetColor("rgb(133, 224, 206)");
     } else if (count === 50) {
       SetColor("rgb(224,146,0)");
     } else if (count > 79) {

@@ -3,16 +3,23 @@ import "./Header.css";
 import { Nav, Navbar, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "avataaars";
+import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+import {logout} from '../actions/auth';
 
-export default function Header() {
+const Header = ({isAuthenticated , logout}) =>  {
   return (
-    <div className="row">
-      <div className="col-md-12 col-sm-12 text-center">
-        <Navbar expand="lg" className=" mef-bg navbar-expand-md">
+    <div className="row d-flex justify-content-center">
+      <div style={{ padding: 0 }} className="container-fluid">
+        <Navbar
+          style={{ width: "100%" }}
+          expand="lg"
+          className="mef-bg navbar-expand-lg"
+        >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Link to={"Accueil"} className="mef-navlink">
+              <Link className="mef-navlink" to="/Accueil">
                 Accueil
               </Link>
               <Link className="mef-navlink" to="/Categorie">
@@ -24,7 +31,7 @@ export default function Header() {
             </Nav>
 
             <Nav className="mef-login">
-              {5 === 4 ? (
+              { (isAuthenticated === false || isAuthenticated === null) ? (
                 <>
                   <Link className="mef-navlink" to="/Connexion">
                     Connexion
@@ -88,11 +95,9 @@ export default function Header() {
                           News
                         </Link>
                       </div>
-                    </div>
-                    <div className="row ">
                       <div className="col-md-12 d-flex justify-content-center">
-                        <Link className="mef-navlink-profile" to="/Reglement">
-                          Contact us
+                        <Link onClick={logout} className="mef-navlink-profile" to="/Reglement">
+                          Déconnexion
                         </Link>
                       </div>
                     </div>
@@ -106,3 +111,14 @@ export default function Header() {
     </div>
   );
 }
+
+Header.propTypes = {
+  logout: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+}
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, {logout})(Header);

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
 import QuizzCarte from "../Quizz_Components/QuizzCarte";
 import { Pagination } from "../Home/Pagination";
 import "./Coran.css";
 
-export default function Coran({ value, data }) {
+export default function Coran({ value, data, handleValue }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [versePerPage, setverse] = useState(5);
 
@@ -19,6 +19,11 @@ export default function Coran({ value, data }) {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  useEffect(() => {
+    console.log("changement de chapitre");
+  }, [value]);
+
   // console.log(data[99].versets.length);
   return (
     <>
@@ -27,7 +32,7 @@ export default function Coran({ value, data }) {
           <div className="sidebar-coran">
             {data.map((item, idx) => {
               return (
-                <div className="row liste-coran-item">
+                <div key={idx} className="row liste-coran-item">
                   <div className="col-3  text-center">
                     <p
                       style={{
@@ -39,8 +44,10 @@ export default function Coran({ value, data }) {
                       {idx + 1}
                     </p>
                   </div>
-                  <div className="col-9 justify-content-center ">
-                    <p onClick={(e) => console.log(e)}>{item.nom_phonetique}</p>
+                  <div key={idx} className="col-9 justify-content-center ">
+                    <p onClick={(e) => handleValue(item.nom_phonetique)}>
+                      {item.nom_phonetique}
+                    </p>
                   </div>
                 </div>
               );
@@ -49,7 +56,7 @@ export default function Coran({ value, data }) {
         </div>
         <div className="col-8">
           <div
-            style={{ marginTop: 50 }}
+
             className="row d-flex justify-content-center "
           >
             <IconContext.Provider
@@ -65,18 +72,21 @@ export default function Coran({ value, data }) {
                       <div key={item.position}>
                         <QuizzCarte
                           title={item.nom_phonetique}
+                          value={value}
                           description={item.versets.slice(
                             indexOfFirstPost,
                             indexOfLastPost
                           )}
                           numero={item.position}
                         />
-                        <div className="row d-flex justify-content-center">
-                          <Pagination
-                            versePerPage={versePerPage}
-                            totalVerse={item.versets.length}
-                            paginate={paginate}
-                          />
+                        <div className="row  justify-content-center">
+                          <div className="col-10 justify-content-center">
+                            <Pagination
+                              versePerPage={versePerPage}
+                              totalVerse={item.versets.length}
+                              paginate={paginate}
+                            />
+                          </div>
                         </div>
                       </div>
                     );

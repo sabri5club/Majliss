@@ -1236,25 +1236,25 @@ export const Quizzdata = [
     },
     propositions: [
       {
-        proposition: "6",
+        proposition: "6 ans",
         id: 0,
 
         goodAnswer: true,
       },
       {
-        proposition: "7",
+        proposition: "7 ans",
         id: 1,
 
         goodAnswer: false,
       },
       {
-        proposition: "8",
+        proposition: "8 ans",
         id: 2,
 
         goodAnswer: false,
       },
       {
-        proposition: "9",
+        proposition: "9 ans",
         id: 3,
 
         goodAnswer: false,
@@ -1264,8 +1264,7 @@ export const Quizzdata = [
   },
   {
     question_detail: {
-      QuizzQuestion:
-        "Quelle sourate équivaut au tiers du coran? Et quelle sourate équivaut au quart du coran ?",
+      QuizzQuestion: "Quelle sourate équivaut au quart du coran? ",
       categorie: "Coran",
       showAnswer: false,
       difficulty: "3",
@@ -1302,8 +1301,7 @@ export const Quizzdata = [
   },
   {
     question_detail: {
-      QuizzQuestion:
-        "Quelle sourate équivaut au tiers du coran? Et quelle sourate équivaut au tiers du coran ?",
+      QuizzQuestion: "Quelle sourate équivaut au tiers du coran? ",
       categorie: "Coran",
       showAnswer: false,
       difficulty: "3",
@@ -1337,5 +1335,42 @@ export const Quizzdata = [
       },
     ],
     id: 36,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Quelle sourate équivaut au tiers du coran? ",
+      categorie: "Coran",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        "Selon Ibn Abbas, le Prophète (paix et bénédiction de Dieu soient sur lui) avait dit : « Réciter sourate Al Ikhlass, équivaut au tiers du Coran et réciter sourate Al Kafiroun équivaut au quart du Coran » (rapporté par Tirmidhi et authentifié par Cheikh Albani dans Sahih Targhib n°1477).",
+    },
+    propositions: [
+      {
+        proposition: "Al kafiroun",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "Al ikhlass",
+        id: 1,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "Al Fatiha",
+        id: 2,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "Al Nass",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 37,
   },
 ];

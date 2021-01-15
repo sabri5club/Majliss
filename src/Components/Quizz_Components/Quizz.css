@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: center;
   align-content: center;
+  margin-top: 35px;
 }
 
 .mef-rep-quizz {
@@ -61,16 +62,12 @@
 }
 
 .mef-next {
-  padding: 8px;
+  padding: 5px;
   margin-top: 20px;
+
   font-family: "Roboto";
   font-weight: 400;
-}
-
-.mef-next:hover {
-  cursor: pointer;
-  background-color: rgb(99, 99, 115);
-  padding: 8px;
+  background-color: rgb(55, 172, 158);
   color: white;
   border-radius: 20px;
 }

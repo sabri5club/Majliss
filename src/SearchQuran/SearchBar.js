@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Coran from "../Components/Home/Coran";
 import axios from "axios";
-import { FormControl, Dropdown } from "react-bootstrap";
 
 export default function SearchBar() {
   const [value, setValue] = useState("al-faatiha");
@@ -30,7 +29,10 @@ export default function SearchBar() {
     console.log(value);
   };
 
- 
+  const handleValue = (chapitre) => {
+    setValue(chapitre.toLowerCase());
+  };
+
   return (
     <>
       <div className="row m-2 d-flex justify-content-center ">
@@ -56,9 +58,9 @@ export default function SearchBar() {
             </form>
           </div>
         </div>
-
       </div>
-      <Coran data={data} value={value} />
+
+      <Coran data={data} value={value} handleValue={handleValue} />
     </>
   );
 }

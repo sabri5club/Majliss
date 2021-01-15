@@ -60,7 +60,6 @@ export default function QuizzConfig() {
                       value={name}
                     />
                   </Form.Group>
-                
 
                   <Form.Group controlId="formNasicRange">
                     <Form.Label>
@@ -101,7 +100,7 @@ export default function QuizzConfig() {
                   {["checkbox"].map((type) => (
                     <div key={`inline-${type}`} className="mb-3">
                       <Form.Check
-                        onClick={(e) => AddCategorie("Toutes", e)}
+                        onChange={(e) => AddCategorie("toutes", e)}
                         inline
                         label="Toutes"
                         type={type}
@@ -109,7 +108,7 @@ export default function QuizzConfig() {
                         checked={checkbox[0]}
                       />
                       <Form.Check
-                        onClick={(e) => AddCategorie("coran", e)}
+                        onChange={(e) => AddCategorie("coran", e)}
                         inline
                         label="coran"
                         type={type}
@@ -118,7 +117,7 @@ export default function QuizzConfig() {
                       />
 
                       <Form.Check
-                        onClick={(e) => AddCategorie("ramadan", e)}
+                        onChange={(e) => AddCategorie("ramadan", e)}
                         inline
                         label="ramadan"
                         type={type}
@@ -126,7 +125,7 @@ export default function QuizzConfig() {
                         checked={checkbox[2]}
                       />
                       <Form.Check
-                        onClick={(e) => AddCategorie("prières", e)}
+                        onChange={(e) => AddCategorie("prières", e)}
                         inline
                         label="prière"
                         type={type}

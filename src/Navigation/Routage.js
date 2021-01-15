@@ -1,5 +1,5 @@
 import React from "react";
-import Reglement from "../TextDisplay/Reglement";
+import Reglement from "../Static/Reglement";
 import Accueil from "../Components/Home/Accueil";
 import Connexion from "../Components/Register/Connexion";
 import Inscription from "../Components/Register/Inscription";
@@ -11,7 +11,7 @@ import Submit from "../Components/Submit_quizz/Submit";
 import Coran from "../Components/Home/Coran";
 import generalRank from "../Components/Ranking/generalRank";
 import Profil from "../Components/Profil/Profil";
-import searchBar from "../SearchBar/SearchBar";
+import searchBar from "../SearchQuran/SearchBar";
 import { Router, Route } from "react-router-dom";
 import history from "./History";
 import QuizzConfig from "../Components/Quizz_Components/QuizzConfig";

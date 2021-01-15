@@ -12,6 +12,7 @@ function QuizzAnswer(props) {
     from: { opacity: 1, marginRight: 250, marginLeft: -250 },
     marginLeft: 0,
     marginRight: 0,
+    marginBottom: 25,
 
     config: { duration: 1000 },
   });
@@ -22,22 +23,27 @@ function QuizzAnswer(props) {
   }, [props.index]);
 
   return (
-    <div className="row justify-content-center">
-      <div className="col-6 justify-content-center w-50 text-center">
-        <animated.div style={test}>
-          {props.data.map((quizz, idx) => (
-            <div
-              key={idx}
-              style={{ ...c2Style, ...props.couleur[idx] }}
-              onClick={() => props.clic(quizz)}
-            >
-              <p>
-                <span style={{ fontWeight: "bold" }}>{letter[idx] + "."}</span>
-                {" " + quizz.proposition}
-              </p>
-            </div>
-          ))}
-        </animated.div>
+    <div className="row">
+      <div className="col-6">
+        <div className="justify-content-center text-center">
+          <animated.div style={test}>
+            {props.data.map((quizz, idx) => (
+              <div
+                key={idx}
+                style={{ ...c2Style, ...props.couleur[idx] }}
+
+                onClick={() => props.clic(quizz)}
+              >
+                <p>
+                  <span style={{ fontWeight: "bold" }}>
+                    {letter[idx] + "."}
+                  </span>
+                  {" " + quizz.proposition}
+                </p>
+              </div>
+            ))}
+          </animated.div>
+        </div>
       </div>
     </div>
   );

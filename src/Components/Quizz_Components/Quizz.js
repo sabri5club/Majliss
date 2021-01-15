@@ -12,6 +12,7 @@ import QuizzReport from "./QuizzReport";
 import QuizzExplanation from "./QuizzExplanation";
 import sucess from "../../sound/success.mp3";
 import wrong from "../../sound/wrong.mp3";
+import QuizzCommentaires from "./QuizzCommentaires";
 
 export default class Quizz extends Component {
   constructor(props) {
@@ -231,44 +232,56 @@ export default class Quizz extends Component {
                 <QuizzScore score={this.state.score} />
               </div>
             </div>
-
-            <QuizzQuestion
-              index={this.state.index}
-              length={this.state.data.length}
-              question={
-                this.state.data[this.state.index].question_detail.QuizzQuestion
-              }
-              difficulty={
-                this.state.data[this.state.index].question_detail.difficulty
-              }
-              categorie={
-                this.state.data[this.state.index].question_detail.categorie
-              }
-            />
-
-            <QuizzAnswer
-              data={this.state.data[this.state.index].propositions}
-              clic={this.boxClick}
-              couleur={this.state.couleur}
-            ></QuizzAnswer>
-
+            <div className="row d-flex justify-content-around">
+              <div className="col-5">
+                <div className="row justify-content-end">
+                  <div className="row d-flex flex-column justify-content-between">
+                    <QuizzQuestion
+                      index={this.state.index}
+                      length={this.state.data.length}
+                      question={
+                        this.state.data[this.state.index].question_detail
+                          .QuizzQuestion
+                      }
+                      difficulty={
+                        this.state.data[this.state.index].question_detail
+                          .difficulty
+                      }
+                      categorie={
+                        this.state.data[this.state.index].question_detail
+                          .categorie
+                      }
+                    />
+                    <QuizzNext
+                      boxNext={this.boxNext}
+                      Quizzdata={this.state.data}
+                      index={this.state.index}
+                      onKeyDown={(e) => console.log(e)}
+                      heart={this.state.heart}
+                    />
+                    <QuizzReport />
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <QuizzAnswer
+                  data={this.state.data[this.state.index].propositions}
+                  clic={this.boxClick}
+                  couleur={this.state.couleur}
+                ></QuizzAnswer>
+              </div>
+            </div>
             {this.state.Explanation ? (
-              <QuizzExplanation
-                explanation={
-                  this.state.data[this.state.index].question_detail.explanation
-                }
-              />
+              <>
+                <QuizzExplanation
+                  explanation={
+                    this.state.data[this.state.index].question_detail
+                      .explanation
+                  }
+                />
+                <QuizzCommentaires />
+              </>
             ) : null}
-
-            <QuizzNext
-              boxNext={this.boxNext}
-              Quizzdata={this.state.data}
-              index={this.state.index}
-              onKeyDown={(e) => console.log(e)}
-              heart={this.state.heart}
-            />
-
-            <QuizzReport />
           </>
         )}
       </>

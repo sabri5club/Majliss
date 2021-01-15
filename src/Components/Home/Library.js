@@ -1,6 +1,8 @@
 import React from "react";
-import SearchBar from "./../../SearchBar/SearchBar";
+import SearchBar from "./../../SearchQuran/SearchBar";
+import quran from  "./../../img/quran-bg.jpg";
 import history from "../../Navigation/History";
+
 
 function Library() {
   return (
@@ -14,11 +16,13 @@ function Library() {
               onClick={() => history.push("/Search")}
               style={{
                 width: 200,
-                color: "#36ab9d",
+                color: "black",
                 height: 200,
-                backgroundColor: "purple",
+                backgroundImage: `url(${quran})`,
+                backgroundSize: "cover",
+                backgroundPosition : "center",
                 marginTop: 30,
-                opacity: 0.7,
+                opacity: 0.9,
               }}
               className="col-3 d-flex justify-content-center align-items-center"
             >
@@ -36,7 +40,7 @@ function Library() {
               }}
               className="col-3 d-flex justify-content-center align-items-center"
             >
-              Hadith
+              Celui qui prend un chemin pour rechercher la science, Allah lui fait prendre par cela un chemin vers le paradis.
             </div>
             <div
               onClick={() => history.push("/Citation")}
