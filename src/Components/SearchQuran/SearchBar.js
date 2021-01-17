@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import Coran from "../Components/Home/Coran";
+import Coran from "../Home/Coran";
 import axios from "axios";
 
 export default function SearchBar() {
@@ -34,7 +34,10 @@ export default function SearchBar() {
   };
 
   return (
+
     <>
+      { !loading ?
+        <>
       <div className="row m-2 d-flex justify-content-center ">
         <div className="col-md-7  d-flex justify-content-end ">
           <div style={{ position: "relative" }} className="row">
@@ -61,6 +64,8 @@ export default function SearchBar() {
       </div>
 
       <Coran data={data} value={value} handleValue={handleValue} />
+      </>
+    : <p>Coran en cours de chargement veuillez patientez ...</p>}
     </>
   );
 }

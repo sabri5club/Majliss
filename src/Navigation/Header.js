@@ -28,11 +28,24 @@ const Header = ({isAuthenticated , logout}) =>  {
               <Link className="mef-navlink" to="/Library">
                 Library
               </Link>
+            {/*
+              <Link className="mef-navlink" to="/Library">
+                Cours
+              </Link>
+              */}
+
+
             </Nav>
 
             <Nav className="mef-login">
               { (isAuthenticated === false || isAuthenticated === null) ? (
                 <>
+    {/*
+                <Link style={{backgroundColor : "#FBFFBA", color: "#7D7D7D", borderRadius : 25}} className="mef-navlink" to="/Library">
+                  Marketplace
+                </Link>
+                    */}
+
                   <Link className="mef-navlink" to="/Connexion">
                     Connexion
                   </Link>

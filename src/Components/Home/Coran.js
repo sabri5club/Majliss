@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
 import QuizzCarte from "../Quizz_Components/QuizzCarte";
 import { Pagination } from "../Home/Pagination";
+import { Form } from "react-bootstrap";
 import "./Coran.css";
 
 export default function Coran({ value, data, handleValue }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [versePerPage, setverse] = useState(5);
+  const [size, setSize]= useState(30);
 
   //get current page
 
@@ -22,7 +24,12 @@ export default function Coran({ value, data, handleValue }) {
 
   useEffect(() => {
     console.log("changement de chapitre");
-  }, [value]);
+  }, [value,size]);
+
+  const custom = {
+  backgroundColor: "purple" ,
+};
+
 
   // console.log(data[99].versets.length);
   return (
@@ -72,6 +79,7 @@ export default function Coran({ value, data, handleValue }) {
                       <div key={item.position}>
                         <QuizzCarte
                           title={item.nom_phonetique}
+                          size={size}
                           value={value}
                           description={item.versets.slice(
                             indexOfFirstPost,
@@ -97,7 +105,27 @@ export default function Coran({ value, data, handleValue }) {
         <div className="col-2 justify-content-center text-center">
           <div className="sidebar-coran-audio">
             <button>Langue arabe</button>
-            <p>Réglage lecture et audio coran</p>
+            <p  style={{color : "white"}}> Réglage lecture </p>
+
+              <Form.Group controlId="formNasicRange">
+                <Form.Label>
+              <p style={{color :"white"}}>Taille : {size}</p>
+                </Form.Label>
+                  <div className="justify-content-center ml-2 mr-2" >
+                <Form.Control
+                  onChange={(e) => setSize(e.target.value)}
+                  type="range"
+                  min="30"
+                  max="100"
+                  step="1"
+                  value={size}
+
+                  custom
+                />
+              </div>
+
+              </Form.Group>
+
           </div>
         </div>
       </div>

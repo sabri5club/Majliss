@@ -14,8 +14,9 @@ export const Pagination = ({ versePerPage, totalVerse, paginate }) => {
         {pageNumbers.map((number, idx) => (
           <div key={number}>
             <li className={`page-item  ${active}`} aria-current="page">
-              <Link
-                href="/"
+              <a
+
+                href="#"
                 onClick={() => paginate(number)}
                 className="page-link active"
               />

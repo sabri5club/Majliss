@@ -1,11 +1,20 @@
-import React from "react";
+import React , {useEffect , useState} from "react";
 import { FiShare2 } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 
-export default function QuizzCarte({ title, description, numero, value }) {
+export default function QuizzCarte({ title, description, numero, value, size }) {
+
+
+  const style = {
+  fontSize:`${size}px` ,
+};
+
+
   return (
+
+
     <>
-      <div className="card mef-card-categories" style={{ width: "60vw", height: "75vh",
+      <div className="card mef-card-categories" style={{ width: "60vw", height: "80vh",
    overflowY: 'scroll'}}>
         <div
           style={{ backgroundColor: "rgb(99, 99, 115)", color: "white" }}
@@ -26,7 +35,9 @@ export default function QuizzCarte({ title, description, numero, value }) {
             <div key={index}>
               <hr />
 
-              <p className="verset-arabe">{item.text_arabe}</p>
+              <p  style={style}   className="verset-arabe">{item.text_arabe}</p>
+
+
             </div>
           ))}
           <hr />

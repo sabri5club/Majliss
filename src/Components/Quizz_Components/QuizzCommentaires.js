@@ -23,6 +23,8 @@ function QuizzCommentaires() {
       description: comment,
     };
 
+
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     axios
       .post("https://tranquil-citadel-82505.herokuapp.com/commentaires", userObject)
       .then((res) => {
