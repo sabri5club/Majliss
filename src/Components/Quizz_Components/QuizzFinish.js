@@ -35,7 +35,7 @@ export default function QuizzFinish(props) {
 
   return (
     <>
-      {props.name}
+      
       {props.heart > 1 ? (
         <div className="container-fluid ">
           <div className="row">

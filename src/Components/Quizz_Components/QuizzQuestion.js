@@ -14,11 +14,11 @@ export default function QuizzQuestion(props) {
             padding: 5,
           }}
         >
-          {props.index  && (
+      
             <div>
               Question : {props.index + 1}/{props.length}
             </div>
-          )}
+
         </div>
         <div
           style={{

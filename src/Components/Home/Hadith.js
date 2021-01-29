@@ -19,7 +19,7 @@ const Hadith = (props) => {
     "Prière du voyageur et son abbréviation",
     "Vendredi",
     "Prières deux fetes",
-    "Prière pour la sollicitaztion de la pluie",
+    "Prière pour la sollicitation de la pluie",
     "Eclipses",
     "Funérailles",
     "Aumone légale",
@@ -39,7 +39,34 @@ const Hadith = (props) => {
     "Voeux",
     "Serments",
     "Serments collectifs \, belligérants [...]",
-    "Peines légales"
+    "Peines légales",
+    "Sentences",
+    "Objets trouvés",
+    "Jihad et Expeditions",
+     "Commandement",
+     "Chasse, animaux à égorger et ce [...]",
+     "Sacrifices",
+     "Boissons",
+     "Vetements et parures",
+     "Education",
+     "Salut",
+     "Bonnes paroles",
+     "Poésie",
+     "Reves",
+     "Mérites",
+     "Mérites des compagnons",
+     "Bonté, la générosité, et les bonnes moeurs",
+     "Destin",
+     "Science",
+     "Invocation, évocations, repentir",
+     "Les tentations du coeurs",
+     "Le repentir",
+     "Caractéristiques des hypocrites et leur status",
+     "Aspects du Joour de la resurrection, [...]",
+      "Paradis, ses délices et de ses habitants",
+      "Tentations et indices du jour dernier",
+      "Ascétisme et indigent",
+      "Exégèse"
   ])
 
   const [data, setData] = useState([]);
@@ -183,13 +210,20 @@ const Hadith = (props) => {
     {
       data.filter((item) => item.french_version.toLowerCase().includes(value)).map((item, idx) => <div key={idx} style={{
           marginTop: 50,
-          backgroundColor: "rgb(239, 244, 243)",
-          color: "rgb(103, 114, 112)",
+
+          backgroundColor: "hsl(172,95%, 25%)",
+          color: "white",
           width: '40vw',
-          padding: 20
+          padding: 20,
+          fontWeight : 500,
+          fontFamily : 'Arial, Helvetica, sans-serif',
+          opacity : '0.7',
+          boxshadow : '0 10px 10px rgba(0, 0, 0, 0.2)',
+          borderRadius : '10px'
         }}>
         <p>Chapitre : {item.chapter_french}</p>
         <p>{item.french_version}</p>
+        <p>{item.arab_version}</p>
         <div className="row">
           <div className="col-6">
             <p>Livre : {item.source}</p>

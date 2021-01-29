@@ -7,6 +7,7 @@ import Alert from '../Layout/Alert';
 import {connect} from 'react-redux';
 import {connexion} from '../../actions/auth';
 import PropTypes from 'prop-types';
+import history from "../../Navigation/History";
 
 import "./Connexion.css";
 
@@ -17,6 +18,10 @@ const Connexion = ({connexion, isAuthenticated}) => {
   const [Email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [validated, setValidated] = useState(false);
+
+  const onNavigateConditions = () => {
+    history.push("/Inscription");
+  }
 
   const onSubmit = (e) => {
     const form = e.currentTarget;
@@ -63,7 +68,7 @@ console.log(userObject);
 
     <div>
         <Alert/>
-      <div className="container">
+      <div className="container mef-connexion">
         <div className="row">
           <div className="col-sm-12">
             <div className="mef-title">
@@ -77,22 +82,12 @@ console.log(userObject);
               <div className=" text-center">
                 <Form noValidate validated={validated}>
                   <Form.Group controlId="text">
-                    <Form.Label>Pseudo</Form.Label>
-                    <Form.Control
-                      onChange={(e) => setPseudo(e.target.value)}
-                      className="mef-placeholder"
-                      type="text"
-                      placeholder="Entrer votre nom"
-                      required
-                      />
-                  </Form.Group>
-                  <Form.Group controlId="text">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>Pseudo ou Email</Form.Label>
                     <Form.Control
                       onChange={(e) => setEmail(e.target.value)}
                       className="mef-placeholder"
                       type="email"
-                      placeholder="Entrer votre email"
+                      placeholder="Entrer votre pseudo ou votre email"
                       required
                       />
                   </Form.Group>
@@ -117,7 +112,7 @@ console.log(userObject);
                   </div>
                   <span>
                     <h6>Pas encore inscris?</h6>
-                    <p>S'inscrire ici</p>
+                    <p onClick={onNavigateConditions}>S'inscrire ici</p>
                   </span>
                 </Form>
               </div>

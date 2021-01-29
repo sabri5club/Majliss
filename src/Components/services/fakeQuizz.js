@@ -1373,4 +1373,411 @@ export const Quizzdata = [
     ],
     id: 37,
   },
+  {
+    question_detail: {
+      QuizzQuestion: "Dans quelle sourate Allah affirme que le Coran à été revelé le mois du Ramadan ? ",
+      categorie: "Coran",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        "",
+    },
+    propositions: [
+      {
+        proposition: "Al baqarah",
+        id: 0,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "Al kahf",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "Al rahman",
+        id: 2,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "Al imran",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 38,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Combien de compagnons ont participé à la bataille de Badr ? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        "La bataille de badr le 17ème jour du ramadan de l'an 2 de l'hégire, eu lieu la bataille de Badr. 313 était le nombre de combattants musulmans qui répondirent à l\'appel du messager d\'Allah",
+    },
+    propositions: [
+      {
+        proposition: "318",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "301",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "313",
+        id: 2,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "315",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 39,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Combien de compagnons ont participé à la bataille de Badr ? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        "Combien d'anges Allah à t'il envoyé lors de la bataille de Badr",
+    },
+    propositions: [
+      {
+        proposition: "300",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "3000",
+        id: 1,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "400",
+        id: 2,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "4000",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 40,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Quel compagnons est surnommée l'homme au deux lumières ? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        " Il épousa deux filles du Prophète (pbsl). D'abord Ruqaya puis sa sœur Oum Kalthoum (après la mort de Ruqaya). C'est ainsi qu'il fut surnommé « l'homme aux deux lumières », (Dou'Nourayn), en référence aux deux filles du Prophète qu'il a épousé. ",
+    },
+    propositions: [
+      {
+        proposition: "Abou Bakr as-Siddiq",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "Omar ibn al-Khattab",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "Othmân ibn Affân",
+        id: 2,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "Ali ibn Abi Talib",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 41,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "En quel animal le serpent de Moise ( Musa) s\'est t\'il transformé? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        " Il épousa deux filles du Prophète (pbsl). D'abord Ruqaya puis sa sœur Oum Kalthoum (après la mort de Ruqaya). C'est ainsi qu'il fut surnommé « l'homme aux deux lumières », (Dou'Nourayn), en référence aux deux filles du Prophète qu'il a épousé. ",
+    },
+    propositions: [
+      {
+        proposition: "un oiseau",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "un serpent",
+        id: 1,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "un scorpion",
+        id: 2,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "une sauterelle",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 42,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Combien de Omra le prophète (pbsl) à t'il effectué? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        " Il épousa deux filles du Prophète (pbsl). D'abord Ruqaya puis sa sœur Oum Kalthoum (après la mort de Ruqaya). C'est ainsi qu'il fut surnommé « l'homme aux deux lumières », (Dou'Nourayn), en référence aux deux filles du Prophète qu'il a épousé. ",
+    },
+    propositions: [
+      {
+        proposition: "4",
+        id: 0,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "3",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "2",
+        id: 2,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "1",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 43,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Combien de Hajj ( pélerinage) le prophète à t'il effectué ? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        " Il épousa deux filles du Prophète (pbsl). D'abord Ruqaya puis sa sœur Oum Kalthoum (après la mort de Ruqaya). C'est ainsi qu'il fut surnommé « l'homme aux deux lumières », (Dou'Nourayn), en référence aux deux filles du Prophète qu'il a épousé. ",
+    },
+    propositions: [
+      {
+        proposition: "9",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "7",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "21",
+        id: 2,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "1",
+        id: 3,
+
+        goodAnswer: true,
+      },
+    ],
+    id: 44,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Combien de Hajj ( pélerinage) le prophète à t'il effectué ? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        " ",
+    },
+    propositions: [
+      {
+        proposition: "9",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "7",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "21",
+        id: 2,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "1",
+        id: 3,
+
+        goodAnswer: true,
+      },
+    ],
+    id: 45,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "De quel mois du calendrier Hégirien le ramadan est t\'il ? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        " ",
+    },
+    propositions: [
+      {
+        proposition: "9ème",
+        id: 0,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "8ème",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "7ème",
+        id: 2,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "10ème",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 46,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Il est dit que l'odeur du la bouche du jeuneur est plus agréable pour Allah que ? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        "Le Prophète ﷺ a dit: \« Allah – Puissant et Majestueux – a dit : « Tout ce que le Fils d’Adam accomplit lui appartient à l’exception du jeûne qui M\’appartient et c\’est Moi qui en fixerai la récompense. Le jeûne est une protection. Lorsque l\’un de vous jeûne, qu\’il s’abstienne d’être grossier et bruyant, et s\’il est insulté ou provoqué, qu\’il dise : \« Je jeûne. \» Par Celui qui tient l\’âme de Muhammad dans Sa Main, l\’haleine du jeûneur est plus agréable à Allah que l\’odeur du musc. Le jeûneur connaît deux joies : l\’une lors de la rupture du jeûne, et l\’autre lorsqu’il rencontrera son Seigneur. \» [Bukhari et Muslim, riyad as-salihin n°1215]",
+    },
+    propositions: [
+      {
+        proposition: "Le miel",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "La Rose",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "Le Musc",
+        id: 2,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "Le thym",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 47,
+  },
+  {
+    question_detail: {
+      QuizzQuestion: "Ou sont allé les musulmans lors de leur première Hijra (émigration) ? ",
+      categorie: "Les compagnons",
+      showAnswer: false,
+      difficulty: "3",
+      explanation:
+        " ",
+    },
+    propositions: [
+      {
+        proposition: "Médiine",
+        id: 0,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "Syrie",
+        id: 1,
+
+        goodAnswer: false,
+      },
+      {
+        proposition: "L\'Abyssinie",
+        id: 2,
+
+        goodAnswer: true,
+      },
+      {
+        proposition: "Palestine",
+        id: 3,
+
+        goodAnswer: false,
+      },
+    ],
+    id: 48,
+  },
 ];

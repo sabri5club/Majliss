@@ -1,5 +1,6 @@
 import React from "react";
 import Reglement from "../Static/Reglement";
+import Conditions from "../Static/Conditions";
 import Accueil from "../Components/Home/Accueil";
 import Hadith from "../Components/Home/Hadith";
 import Connexion from "../Components/Register/Connexion";
@@ -38,6 +39,7 @@ export default function Routage() {
         <Route path="/generalRank" component={generalRank}></Route>
         <Route path="/Profil" component={Profil}></Route>
         <Route path="/Reglement" component={Reglement}></Route>
+          <Route path="/Conditions" component={Conditions}></Route>
         <Route path="/Library" component={Library}></Route>
         <Route path="/Hadith" component={Hadith}></Route>
         <Route path="/Citation" component={Citation}></Route>

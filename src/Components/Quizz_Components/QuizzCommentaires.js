@@ -55,9 +55,10 @@ function QuizzCommentaires() {
           <Form.Control
             as="textarea"
             rows={3}
+            maxLength={250}
             type="text"
             style={{ marginLeft: 10, padding: 4, width: 400 }}
-            onChange={(e) => Setcomment(e.target.value)}
+            onChange={(e) => Setcomment(e.target.value.toString())}
             placeholder="Laisser un commentaire ..."
             required
             value={comment}
@@ -79,12 +80,12 @@ function QuizzCommentaires() {
 
         {data.map((item, index) => {
           return (
-            <div
+            <div className="d-flex"
               style={{
                 backgroundColor: "rgb(222, 242, 238)",
                 margin: 5,
                 padding: 10,
-                width: 500,
+                width: 750,
               }}
               key={item._id}
             >
@@ -112,8 +113,10 @@ function QuizzCommentaires() {
                   Username
                 </p>
               </div>
+              <div className="row">
               <p style={{ fontSize: 20 }}>{item.title}</p>
               <p>{item.description}</p>
+              </div>
               <div className="row">
                 <div style={{ marginLeft: 10 }}>
                   <FaThumbsUp />

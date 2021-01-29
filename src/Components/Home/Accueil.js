@@ -14,8 +14,8 @@ function Accueil() {
   return (
     <>
       <div className="row justify-content-center">
-        <div className="majliss-title">
-          <h1>Bienvenue sur Majliss</h1>
+        <div className=" col-12 d-flex flex-column majliss-title">
+          <h1>Bienvenue sur Lovemydin</h1>
           <p>Apprenez l'islam à travers plusieurs thématiques !</p>
         </div>
       </div>
@@ -23,29 +23,34 @@ function Accueil() {
       <div className="row justify-content-center">
         <div className="text-center majliss-subtitle">
           <h3>
-            Pour Ajouter une question choisissez la catégorie, puis titre de la
-            question, puis 4 réponses possibles!
+          Choisissez entre le mode entrainement ou le mode standard avec classement générale !
           </h3>
         </div>
       </div>
-      <div className="row btn-home">
-        <div className="mef-btn-position col d-flex justify-content-center">
+      <div className="row justify-content-around ">
+        <div className=" col d-flex text-center justify-content-end">
           <button onClick={onNavigateQuizzConfig} className="btn-accueil">
-            <p className="mef-p">Training Quizz</p>
+            <p className="mef-p">Entrainement Quizz</p>
           </button>
         </div>
-        <div className="mef-btn-position col d-flex justify-content-center">
+        <div className=" col d-flex text-center">
           <button onClick={onNavigateQuizz} className="btn-accueil">
-            <p className="mef-p">Quizz Community</p>
+            <p className="mef-p">Mode standard</p>
           </button>
         </div>
+              </div>
+
+
+            {/*
 
         <div className="mef-btn-position col d-flex justify-content-center">
           <button onClick={onNavigateQuizz} className="btn-accueil">
             <p className="mef-p">Survivor Quizz</p>
           </button>
         </div>
-      </div>
+          */}
+
+
     </>
   );
 }

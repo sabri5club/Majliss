@@ -43,6 +43,7 @@ export default function Submit() {
     setQuizz(copyQuizz);
     console.log(Quizz);
 
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     axios
       .post("https://tranquil-citadel-82505.herokuapp.com/questions/", Quizz)
       .then((res) => {
@@ -67,10 +68,6 @@ export default function Submit() {
       <div className="mef-title">
         <h3 className="text-center">Créer un Quizz!</h3>
       </div>
-      <p>{Question}</p>
-      <p>{Propositions}</p>
-      <p>{Explanation}</p>
-      <p>categorie : {Category}</p>
       <div className="row">
         <div className="col-6 d-flex justify-content-center ">
           <div style={{ width: 500 }} className="text-center">
@@ -99,6 +96,7 @@ export default function Submit() {
               <Form.Group controlId="text">
                 <Form.Label>Proposition 1 ( la bonne réponse) </Form.Label>
                 <Form.Control
+                  style={{backgroundColor : '#90ee90', opacity : '70%'}}
                   // onChange={(e) => AddProposition()}
                   className="mef-placeholder"
                   ref={proposition1}
@@ -109,6 +107,7 @@ export default function Submit() {
               <Form.Group controlId="text">
                 <Form.Label>Proposition 2</Form.Label>
                 <Form.Control
+                    style={{backgroundColor : '#ea968c', opacity : '70%'}}
                   // onChange={(e) => AddProposition()}
                   className="mef-placeholder"
                   type="text"
@@ -119,6 +118,7 @@ export default function Submit() {
               <Form.Group controlId="text">
                 <Form.Label>Proposition 3</Form.Label>
                 <Form.Control
+                    style={{backgroundColor : ("#ea968c"), opacity : '70%'}}
                   // onChange={(e) => AddProposition()}
                   className="mef-placeholder"
                   type="text"
@@ -129,6 +129,7 @@ export default function Submit() {
               <Form.Group controlId="text">
                 <Form.Label>Proposition 4</Form.Label>
                 <Form.Control
+                    style={{backgroundColor : '#ea968c', opacity : '70%'}}
                   // onChange={(e) => AddProposition()}
                   className="mef-placeholder"
                   type="text"
@@ -148,22 +149,12 @@ export default function Submit() {
                   onChange={(e) => setExplanation(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check
-                  type="checkbox"
-                  label="J'accepte les conditions d'utilisations"
-                />
-              </Form.Group>
               <div className="mef-button-position">
                 <Button onClick={(e) => onSubmit(e)} className="btn-primary">
                   Valider
                 </Button>
               </div>
             </Form>
-            <span>
-              <h6>Pas encore inscris?</h6>
-              <p>S'inscrire ici</p>
-            </span>
           </div>
         </div>
         <div className="col-6>">

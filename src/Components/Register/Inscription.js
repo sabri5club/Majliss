@@ -8,6 +8,7 @@ import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from 'prop-types';
 import Alert from '../Layout/Alert';
+import history from "../../Navigation/History";
 
 
 const Inscription = ({setAlert, register, isAuthenticated}) => {
@@ -15,9 +16,16 @@ const Inscription = ({setAlert, register, isAuthenticated}) => {
   const [Nom, setNom] = useState("");
   const [Prenom, setPrenom] = useState("");
   const [Email, setEmail] = useState("");
+  const [Checkbox, setCcheckbox] = useState(false);
   const [Password, setPassword] = useState("");
   const [Password2, setPassword2] = useState("");
   const [validated, setValidated] = useState(false);
+
+
+  function onNavigateConditions() {
+    history.push("/Conditions");
+  }
+
 
   const onSubmit = (e) => {
     const form = e.currentTarget;
@@ -42,15 +50,15 @@ const Inscription = ({setAlert, register, isAuthenticated}) => {
 
     register({userObject});
 
-  //   axios
-  //     .post("http://localhost:8081/users/", userObject)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //         setAlert("Envois d'un utilisateur", "danger");
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
+    //   axios
+    //     .post("http://localhost:8081/users/", userObject)
+    //     .then((res) => {
+    //       console.log(res.data);
+    //         setAlert("Envois d'un utilisateur", "danger");
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
   };
 
   if(isAuthenticated){
@@ -60,6 +68,7 @@ const Inscription = ({setAlert, register, isAuthenticated}) => {
 
   return (
     <div>
+    
       <Alert/>
       <div className="container">
         <div className="row">
@@ -82,7 +91,7 @@ const Inscription = ({setAlert, register, isAuthenticated}) => {
                       type="text"
                       placeholder="Choisissez un pseudo"
                       required
-                    />
+                      />
                   </Form.Group>
                   <Form.Group controlId="text-nom">
                     <Form.Label>Nom</Form.Label>
@@ -92,7 +101,7 @@ const Inscription = ({setAlert, register, isAuthenticated}) => {
                       type="text"
                       placeholder="Entrer votre Nom"
                       required
-                    />
+                      />
                   </Form.Group>
                   <Form.Group controlId="text-prenom">
                     <Form.Label>Prénom</Form.Label>
@@ -102,7 +111,7 @@ const Inscription = ({setAlert, register, isAuthenticated}) => {
                       type="text"
                       placeholder="Entrer votre prénom"
                       required
-                    />
+                      />
                   </Form.Group>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Adresse email</Form.Label>
@@ -112,7 +121,7 @@ const Inscription = ({setAlert, register, isAuthenticated}) => {
                       type="email"
                       placeholder="Entrer votre email"
                       required
-                    />
+                      />
                   </Form.Group>
 
                   <Form.Group controlId="formBasicPassword">
@@ -123,20 +132,33 @@ const Inscription = ({setAlert, register, isAuthenticated}) => {
                       type="password"
                       placeholder="Mot de passe"
                       required
-                    />
+                      />
+                    <Form.Label>Retaper votre Mot de passe</Form.Label>
+                    <Form.Control
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="mef-placeholder"
+                      type="password"
+                      placeholder="Mot de passe"
+                      required
+                      />
                   </Form.Group>
                   <Form.Group controlId="formBasicCheckbox">
                     <Form.Check
                       type="checkbox"
-                      label="J'accepte les conditions d'utilisations"
+                      label="J'accepte les conditions générales d'utilisation et de ventes"
                       required
-                    />
+                      onChange={(e) => setCcheckbox(!Checkbox)}
+                      />
+                    <Form.Text   onClick={(e) => onNavigateConditions()} className="text-muted">
+                      Consulter la cgv.
+                    </Form.Text>
+
                   </Form.Group>
                   <div className="mef-button-position">
                     <Button
                       onClick={(e) => onSubmit(e)}
                       className="btn-primary"
-                    >
+                      >
                       Valider
                     </Button>
                   </div>
@@ -160,7 +182,7 @@ Inscription.propTypes = {
 
 
 const mapStateToProps = state => ({
-isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated
 });
 
 

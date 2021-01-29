@@ -7,11 +7,7 @@ import history from "../../Navigation/History";
 const Library = () => {
   return (
 
-
-
-
-
-          <div className="row d-flex  justify-content-around ">
+    <div className="row d-flex justify-content-around align-items-center ">
 
       <div
         onClick={() => history.push("/Search")}
@@ -22,31 +18,31 @@ const Library = () => {
           backgroundImage: `url(${quran})`,
           backgroundSize: "cover",
           backgroundPosition : "center",
-          marginTop: 30,
+          marginTop: '20vh',
           opacity: 0.9,
         }}
         className="col-4 d-flex justify-content-center align-items-center"
-      >
+        >
         Coran
       </div>
 
       <div
-          onClick={() => history.push("/Hadith")}
+        onClick={() => history.push("/Hadith")}
         style={{
           width: 300,
           color: "white",
           height: 300,
           backgroundColor: "blue",
-          marginTop: 30,
+          marginTop: '20vh',
           opacity: 0.7,
         }}
         className="col-4 d-flex justify-content-center text-center align-items-center flex-column"
-      >
-      <h4>Hadith </h4>
+        >
+        <h4>Hadith </h4>
         Celui qui prend un chemin pour rechercher la science, Allah lui fait prendre par cela un chemin vers le paradis.
       </div>
     </div>
-//
+    //
     //   <div
     //     onClick={() => history.push("/Citation")}
     //     style={{
@@ -120,7 +116,7 @@ const Library = () => {
 
 
 
-    );
-  }
+  );
+}
 
-  export default Library;
+export default Library;

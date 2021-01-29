@@ -9,7 +9,7 @@
   justify-content: right;
 }
 
-.btn-primary {
+.btn-lmd {
   background-color: #87e1cf !important;
   color: rgb(253, 250, 255);
   border-color: transparent !important;
@@ -18,7 +18,7 @@
   padding: 25px;
 }
 
-.btn-primary:focus {
+.btn-ldm:focus {
   border-color: #36ab9d !important;
   box-shadow: inset 0 1px 1px rgb(75, 119, 78), 0 0 8px rgb(75, 119, 78) !important;
   font-weight: bold;
@@ -37,4 +37,9 @@
 
 .mef-placeholder {
   text-align: center;
+}
+
+.btn-primary {
+border-color: transparent !important;
+background-color: 'Transparent' !important;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Coran from "../Home/Coran";
 import axios from "axios";
+import {Spinner } from 'react-bootstrap';
 
 export default function SearchBar() {
   const [value, setValue] = useState("al-faatiha");
@@ -11,7 +12,7 @@ export default function SearchBar() {
     setLoading(true);
     await axios.get("./quran.json").then((res) => {
       setData(res.data.sourates);
-      console.log(res.data);
+      // console.log(res.data);
       setLoading(false);
     });
   }, []);
@@ -20,9 +21,7 @@ export default function SearchBar() {
     fetchMyApi();
   }, [fetchMyApi]);
 
-  if (loading) {
-    return <p>Chargement des sourates veuillez patienter</p>;
-  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,7 +64,13 @@ export default function SearchBar() {
 
       <Coran data={data} value={value} handleValue={handleValue} />
       </>
-    : <p>Coran en cours de chargement veuillez patientez ...</p>}
+    : <>
+    <div className="row justify-content-center ">
+      <div className="text-center" style={{marginTop : '20vh', marginBottom:'25vh'}}>
+    <Spinner  animation="border" role="status"  variant="info"/>
+             <p>Chargement du lecteur de coran veuillez patientez ...</p>
+             </div>
+</div> </>}
     </>
   );
 }

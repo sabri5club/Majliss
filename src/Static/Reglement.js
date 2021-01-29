@@ -1,7 +1,7 @@
 import React from "react";
 import "./TextDisplay.css";
 
-export default function Reglement() {
+const Reglement = () => {
   return (
     <>
       <div className="container">
@@ -59,3 +59,5 @@ export default function Reglement() {
     </>
   );
 }
+
+export default Reglement;
